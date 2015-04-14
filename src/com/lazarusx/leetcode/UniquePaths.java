@@ -1,0 +1,29 @@
+package com.lazarusx.leetcode;
+
+/**
+ * Created by LazarusX on 15/4/6.
+ */
+public class UniquePaths {
+
+    public static void main(String[] args) {
+        System.out.println(uniquePaths(3, 7));
+    }
+
+    public static int uniquePaths(int m, int n) {
+        int[][] paths = new int[m][n];
+
+        paths[0][0] = 1;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (i > 0) {
+                    paths[i][j] += paths[i - 1][j];
+                }
+                if (j > 0) {
+                    paths[i][j] += paths[i][j - 1];
+                }
+            }
+        }
+
+        return paths[m - 1][n - 1];
+    }
+}
