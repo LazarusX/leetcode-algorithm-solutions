@@ -3,7 +3,7 @@ package com.lazarusx.leetcode;
 /**
  * Created by LazarusX on 15/3/21.
  */
-public class HammingWeight {
+public class NumberOf1Bits {
 
     public static void main(String[] args) {
         System.out.println(hammingWeight(11));

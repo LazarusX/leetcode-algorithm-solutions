@@ -3,7 +3,7 @@ package com.lazarusx.leetcode;
 /**
  * Created by LazarusX on 15/3/21.
  */
-public class Connect {
+public class PopulatingNextRightPointersInEachNode {
     public static void main(String[] args) {
         connect(null);
     }

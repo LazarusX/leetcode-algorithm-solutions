@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by LazarusX on 15/3/21.
+ * Created by LazarusX on 15/4/14.
  */
-public class PreorderTraversal {
-    public static List<Integer> preorderTraversal(TreeNode root) {
+public class BinaryTreePreorderTraversal {
+    public List<Integer> preorderTraversal(TreeNode root) {
         ArrayList<Integer> ret = new ArrayList<Integer>();
 
         if (root == null)
