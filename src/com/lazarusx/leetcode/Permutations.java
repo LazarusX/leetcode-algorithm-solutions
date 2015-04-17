@@ -24,7 +24,7 @@ public class Permutations {
         if (num == null || num.length == 0) {
             return permutations;
         }
-        
+
         permutations.add(new ArrayList<Integer>());
 
         for (int i = 0; i < num.length; i++) {
