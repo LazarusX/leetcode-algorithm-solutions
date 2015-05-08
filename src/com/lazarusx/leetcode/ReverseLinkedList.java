@@ -17,7 +17,7 @@ public class ReverseLinkedList {
         if (head == null) {
             return head;
         }
-        
+
         ListNode p1 = head;
         ListNode p2 = head.next;
         head.next = null;
