@@ -18,28 +18,18 @@ public class Triangle {
     }
 
     public static int minimumTotal(List<List<Integer>> triangle) {
-        int rowCount = triangle.size();
-        int[] lengths = new int[rowCount];
-        lengths[0] = triangle.get(0).get(0);
+        int[] mins = new int[triangle.size()];
 
-        for (int i = 1; i < rowCount; i++) {
-            int[] tempLengths = new int[i + 1];
-            tempLengths[0] = lengths[0] + triangle.get(i).get(0);
-            tempLengths[i] = lengths[i - 1] + triangle.get(i).get(i);
-            for (int j = 1; j < i; j++) {
-                tempLengths[j] = Math.min(lengths[j - 1], lengths[j]) + triangle.get(i).get(j);
-            }
-
-            System.arraycopy(tempLengths, 0, lengths, 0, i + 1);
+        for (int i = 0; i < triangle.size(); i++) {
+            mins[i] = triangle.get(triangle.size() - 1).get(i);
         }
 
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < rowCount; i++) {
-            if (lengths[i] < min) {
-                min = lengths[i];
+        for (int i = triangle.size() - 2; i >= 0; i--) {
+            for (int j = 0; j <= i; j++) {
+                mins[j] = Math.min(mins[j], mins[j + 1]) + triangle.get(i).get(j);
             }
         }
 
-        return min;
+        return mins[0];
     }
 }
