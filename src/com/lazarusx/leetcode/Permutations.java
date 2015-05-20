@@ -11,11 +11,7 @@ public class Permutations {
         int[] num = {1, 2, 3};
         List<List<Integer>> permutations = permute(num);
         for (List<Integer> permutation : permutations) {
-            System.out.print("[");
-            for (Integer value : permutation) {
-                System.out.print(value + ",");
-            }
-            System.out.println("]");
+            System.out.println(permutation);
         }
     }
 
@@ -27,8 +23,7 @@ public class Permutations {
 
         permutations.add(new ArrayList<Integer>());
 
-        for (int i = 0; i < num.length; i++) {
-            int element = num[i];
+        for (int element : num) {
             List<List<Integer>> newPermutations = new ArrayList<List<Integer>>();
             for (List<Integer> permutation : permutations) {
                 for (int j = 0; j <= permutation.size(); j++) {
