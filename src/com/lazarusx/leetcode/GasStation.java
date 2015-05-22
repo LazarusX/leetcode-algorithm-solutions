@@ -23,27 +23,22 @@ public class GasStation {
         }
 
         int remaining = 0;
-        for (int i : delta) {
-            remaining += i;
+        int subRemaining = 0;
+        int index = 0;
+        for (int i = 0; i < delta.length; i++) {
+            remaining += delta[i];
+            subRemaining += delta[i];
+
+            if (subRemaining < 0) {
+                subRemaining = 0;
+                index = i+1;
+            }
         }
 
         if (remaining < 0) {
             return -1;
+        } else {
+            return index;
         }
-
-        int index = -1;
-        int min = 0;
-        for (int i = 1; i < delta.length; i++) {
-            if (delta[i - 1] < 0 && delta[i] >= 0 && delta[i - 1] < min) {
-                index = i;
-                min = delta[i - 1];
-            }
-        }
-
-        if (delta[delta.length - 1] < 0 && delta[0] >= 0 && delta[delta.length - 1] < min) {
-            index = 0;
-        }
-
-        return index;
     }
 }
