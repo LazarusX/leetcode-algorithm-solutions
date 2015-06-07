@@ -8,9 +8,7 @@ public class RotateArray {
         int[] nums = new int[]{1, 2, 3, 4, 5, 6};
         rotate(nums, 3);
 
-        for (int num : nums) {
-            System.out.println(num);
-        }
+        Utility.printIntArray(nums);
     }
 
     public static void rotate(int[] nums, int k) {
