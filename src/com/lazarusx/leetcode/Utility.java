@@ -16,4 +16,16 @@ public class Utility {
             System.out.println(list);
         }
     }
+
+    public static void printLinkedList(ListNode head) {
+        if (head != null) {
+            System.out.print(head.val);
+
+            if (head.next != null) {
+                System.out.print("->");
+            }
+
+            printLinkedList(head.next);
+        }
+    }
 }
