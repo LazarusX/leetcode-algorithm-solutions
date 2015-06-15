@@ -28,4 +28,21 @@ public class Utility {
             printLinkedList(head.next);
         }
     }
+
+    public static ListNode constructLinkedListFromArray(int[] nums) {
+        if (nums == null) {
+            return null;
+        }
+
+        ListNode dummy = new ListNode(-1);
+        ListNode current = dummy;
+
+        for (int num : nums) {
+            ListNode next = new ListNode(num);
+            current.next = next;
+            current = next;
+        }
+
+        return dummy.next;
+    }
 }
