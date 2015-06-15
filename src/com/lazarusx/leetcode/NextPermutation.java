@@ -22,17 +22,15 @@ public class NextPermutation {
             if (i == -1) {
                 reverseArray(nums, 0, nums.length - 1);
             } else {
-                int min = Integer.MAX_VALUE;
-                int newFirst = 0;
-                for (int j = nums.length - 1; j >= i + 1; j--) {
-                    if (nums[j] > nums[i] && nums[j] < min) {
-                        min = nums[j];
-                        newFirst = j;
+                int j;
+                for (j = nums.length - 1; j >= i + 1; j--) {
+                    if (nums[j] > nums[i]) {
+                        break;
                     }
                 }
 
-                int temp = nums[newFirst];
-                nums[newFirst] = nums[i];
+                int temp = nums[j];
+                nums[j] = nums[i];
                 nums[i] = temp;
                 reverseArray(nums, i + 1, nums.length - 1);
             }
