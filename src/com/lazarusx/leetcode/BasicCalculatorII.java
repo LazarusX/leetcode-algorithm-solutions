@@ -1,7 +1,5 @@
 package com.lazarusx.leetcode;
 
-import java.util.ArrayList;
-
 /**
  * Created by LazarusX on 15/6/24.
  */
