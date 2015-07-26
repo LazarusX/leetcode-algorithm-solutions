@@ -10,27 +10,18 @@ public class MaximumSubarray {
         System.out.println(maxSubArray(A));
     }
 
-    public static int maxSubArray(int[] A) {
-        int maxSum = 0;
-        int sum = 0;
-        int maxNonPositive = Integer.MIN_VALUE;
-
-        for (int i = 0; i < A.length; i++) {
-            if (A[i] <= 0 && A[i] > maxNonPositive) {
-                maxNonPositive = A[i];
-            }
-            sum += A[i];
-            if (sum > maxSum) {
-                maxSum = sum;
-            } else if (sum < 0) {
-                sum = 0;
-            }
+    public static int maxSubArray(int[] nums) {
+        if (nums == null || nums.length == 0) {
+            return 0;
         }
 
-        if (maxSum > 0) {
-            return maxSum;
-        } else {
-            return maxNonPositive;
+        int localMax = nums[0];
+        int globalMax = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            localMax = Math.max(nums[i], localMax + nums[i]);
+            globalMax = Math.max(globalMax, localMax);
         }
+
+        return globalMax;
     }
 }
